@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv';
+    const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
     Papa.parse(csvUrl, {
         download: true,
@@ -15,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function displayData(data) {
     const container = document.querySelector('.container .info');
-    data.forEach(entry => {
+    container.innerHTML = ''; // Clears existing data
+
+    const filteredData = data.filter(entry => entry.Day === today);
+
+    filteredData.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
             <div class="room">${entry.Room}</div>
