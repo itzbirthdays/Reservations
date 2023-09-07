@@ -56,3 +56,7 @@ body {
 .time {
     margin-bottom: 20px; /* Adjust as needed for desired spacing */
 }
+.child-name, .room, .time {
+    margin-top: 5px; /* Adjust this value to increase or decrease the top spacing */
+    margin-bottom: 5px; /* Adjust this value to increase or decrease the bottom spacing */
+}
