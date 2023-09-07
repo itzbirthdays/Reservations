@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     Tabletop.init({
         key: '1WRKngZHrSUwTiXohWYOfT3VP-9hgetkRFb8pNc20JbI',
-        callback: showInfo,
+        callback: showInfo,console.log(data);
         simpleSheet: true
     });
 });
