@@ -1,5 +1,7 @@
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
+document.querySelector('.current-day').innerText = today;
+
 document.addEventListener('DOMContentLoaded', function() {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv';
 
@@ -7,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         download: true,
         header: true,
         complete: function(results) {
-            console.log(results.data);
-            displayData(results.data);
+            displayData(results.data.filter(entry => entry.Day === today));
+            adjustScrolling();  // call after the data is displayed
         }
     });
 
@@ -17,11 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function displayData(data) {
     const container = document.querySelector('.container .info');
-    container.innerHTML = ''; // Clears existing data
-
-    const filteredData = data.filter(entry => entry.Day === today);
-
-    filteredData.forEach(entry => {
+    data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
             <div class="room">${entry.Room}</div>
@@ -43,8 +41,33 @@ function generateStars() {
         document.body.appendChild(star);
     }
 }
-// Automatic Scrolling logic
-const infoContainer = document.querySelector('.info');
-if (infoContainer.scrollHeight > infoContainer.clientHeight) {
-    infoContainer.classList.add('auto-scroll');
+
+function adjustScrolling() {
+    const container = document.querySelector('.container');
+    const contentHeight = container.scrollHeight;
+    const viewportHeight = window.innerHeight;
+
+    if (contentHeight > viewportHeight) {
+        const translateYValue = ((contentHeight - viewportHeight) / contentHeight) * 100;
+        const animationStyle = `
+            @keyframes autoscroll {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-${translateYValue}%);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        `;
+
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = animationStyle;
+        document.head.appendChild(styleSheet);
+
+        container.style.animation = 'autoscroll 60s linear infinite';
+    }
 }
