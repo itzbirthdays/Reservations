@@ -1,61 +1,62 @@
 body {
-    background: radial-gradient(white, lightblue);
-    height: 100vh;
     font-family: 'Comic Sans MS', sans-serif;
-    font-size: 35px;
+    background: lightblue radial-gradient(white, lightblue);
+    height: 100vh;
+    margin: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    align-items: center;
     overflow: hidden;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.current-day {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.child-name {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.room, .time {
+    margin-bottom: 10px;
 }
 
 .star {
     position: absolute;
-    opacity: 0.6; /* 60% transparency */
-    background-color: red; /* This is just a placeholder; we will randomize it with JS */
-    width: 10px;
-    height: 10px;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    animation: float 15s infinite alternate;
+    background-color: currentColor;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    animation: float 6s infinite alternate;
+    opacity: 0.6;
 }
 
 @keyframes float {
-    0% {
+    from {
         transform: translateY(0px);
     }
-    100% {
+    to {
         transform: translateY(-20px);
     }
-}
-
-.container {
-    z-index: 2;
-    position: relative;
-}
-.info div {
-    text-align: center; /* This will center-align the text within each div */
-}
-.container {
-    display: flex;
-    justify-content: center; /* Horizontally centers .info in .container */
-    align-items: center; /* Vertically centers .info in .container */
-    height: 100vh; /* This ensures .container takes up the full viewport height */
-}
-.child-name {
-    font-size: 36px;  /* Big letters */
-    font-family: 'Comic Sans MS', sans-serif;
-    text-align: center;
-}
-
-.age, .room, .time {
-    font-size: 24px;  /* Subheader size */
-    font-family: 'Comic Sans MS', sans-serif;
-    text-align: center;
-}
-.time {
-    margin-bottom: 20px; /* Adjust as needed for desired spacing */
-}
-.child-name {
-    margin-top: 5px; /* Adjust this value to increase or decrease the top spacing */
 }
