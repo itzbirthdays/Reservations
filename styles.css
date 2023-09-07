@@ -1,7 +1,7 @@
 body {
     background: radial-gradient(white, lightblue);
     height: 100vh;
-    font-family: 'Comic-Sans', sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     font-size: 35px;
     display: flex;
     align-items: center;
@@ -41,4 +41,15 @@ body {
     justify-content: center; /* Horizontally centers .info in .container */
     align-items: center; /* Vertically centers .info in .container */
     height: 100vh; /* This ensures .container takes up the full viewport height */
+}
+.child-name {
+    font-size: 36px;  /* Big letters */
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+}
+
+.age, .room, .time {
+    font-size: 24px;  /* Subheader size */
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
 }
