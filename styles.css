@@ -1,46 +1,35 @@
 body {
-    background: radial-gradient(white, lightpink);
+    background: radial-gradient(white, lightblue);
     height: 100vh;
-    overflow: hidden;
     font-family: 'Arial', sans-serif;
     font-size: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.child-name, .age, .room-number, .reservation-time {
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border-radius: 8px;
+.star {
+    position: absolute;
+    opacity: 0.6; /* 60% transparency */
+    background-color: red; /* This is just a placeholder; we will randomize it with JS */
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: float 5s infinite alternate;
 }
 
 @keyframes float {
     0% {
         transform: translateY(0px);
     }
-    50% {
+    100% {
         transform: translateY(-20px);
     }
-    100% {
-        transform: translateY(0px);
-    }
 }
 
-.balloon {
-    position: absolute;
-    bottom: -10%;
-    animation: float 4s ease-in-out infinite;
-}
-
-.confetti {
-    position: absolute;
-    animation: float 5s ease-in-out infinite;
+.container {
+    z-index: 2;
+    position: relative;
 }
