@@ -40,11 +40,16 @@ body {
 
 .star {
     /* ... rest of the styles ... */
-    animation: float 20s infinite; /* Adjusted the time for a slower motion */
+    animation: float 15s infinite; /* Adjusted the time for a slower motion */
 }
 
 
 .container {
     z-index: 2;
     position: relative;
+}
+.info div {
+    color: black;  /* Setting the text color to black */
+    z-index: 5;    /* Ensuring the text appears on top of the background and animations */
+    position: relative;  /* Required to apply z-index */
 }
