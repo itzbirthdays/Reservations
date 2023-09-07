@@ -1,3 +1,21 @@
+const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv';
+
+    Papa.parse(csvUrl, {
+        download: true,
+        header: true,
+        complete: function(results) {
+            console.log(results.data);
+            displayData(results.data);
+        }
+    });
+
+    generateStars();
+});
+
+// ... (rest of your script.js content remains the same)
 document.addEventListener('DOMContentLoaded', function() {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv';
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
