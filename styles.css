@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden; /* to ensure balloons don't scroll the background */
+    position: relative;
+}
+
+table {
+    width: 80%;
+    margin: 5% auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #d0d0d0;
+}
+
+tbody tr:hover {
+    background-color: #e5e5e5;
+}
