@@ -60,7 +60,7 @@ body {
     margin-top: 5px; /* Adjust this value to increase or decrease the top spacing */
 }
 /* Styling for the balloon on the left */
-#leftBalloon {
+#leftballoon {
     position: absolute;
     top: 20%; /* Adjust this as needed to position it vertically */
     left: 5%;
@@ -71,7 +71,7 @@ body {
 }
 
 /* Styling for the balloon on the right */
-#rightBalloon {
+#rightballoon {
     position: absolute;
     top: 20%; /* Adjust this as needed to position it vertically */
     right: 5%;
