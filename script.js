@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function createBalloon() {
-    let balloon = document.createElement('div');
+    let size = Math.random() * 50 + 20; // random size between 20 and 60 (doubled from the previous 10 to 30)    let balloon = document.createElement('div');
     balloon.className = 'balloon';
     let colors = ['red', 'blue', 'green', 'pink', 'yellow'];
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
