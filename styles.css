@@ -50,16 +50,16 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 6s infinite alternate;
+    animation: float 3s infinite alternate;
     opacity: 0.6;
     z-index: -1;  /* This ensures the stars appear behind the text */
 }
 
 @keyframes float {
     from {
-        transform: translateY(0px);
+        transform: translateY(0px) translateX(0px);
     }
     to {
-        transform: translateY(-20px);
+        transform: translateY(-30px) translateX(30px);
     }
 }
