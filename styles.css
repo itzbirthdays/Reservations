@@ -53,3 +53,13 @@ body {
     z-index: 5;    /* Ensuring the text appears on top of the background and animations */
     position: relative;  /* Required to apply z-index */
 }
+.star {
+    /* ... other styles ... */
+    z-index: 1;  /* Setting a lower z-index so stars appear behind the text */
+    position: absolute;
+}
+.container {
+    /* ... other styles ... */
+    z-index: 10;  /* Setting a higher z-index so the container is above the stars */
+    position: relative;
+}
