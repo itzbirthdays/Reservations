@@ -22,44 +22,14 @@ body {
 
 @keyframes float {
     0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(10px, -10px);
-    }
-    50% {
-        transform: translate(-10px, 0);
-    }
-    75% {
-        transform: translate(10px, 10px);
+        transform: translateY(0px);
     }
     100% {
-        transform: translate(0, 0);
+        transform: translateY(-20px);
     }
 }
-
-.star {
-    /* ... rest of the styles ... */
-    animation: float 15s infinite; /* Adjusted the time for a slower motion */
-}
-
 
 .container {
     z-index: 2;
-    position: relative;
-}
-.info div {
-    color: black;  /* Setting the text color to black */
-    z-index: 5;    /* Ensuring the text appears on top of the background and animations */
-    position: relative;  /* Required to apply z-index */
-}
-.star {
-    /* ... other styles ... */
-    z-index: 1;  /* Setting a lower z-index so stars appear behind the text */
-    position: absolute;
-}
-.container {
-    /* ... other styles ... */
-    z-index: 10;  /* Setting a higher z-index so the container is above the stars */
     position: relative;
 }
