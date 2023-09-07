@@ -9,6 +9,9 @@ body {
     background-size: cover;
     overflow: hidden; 
     position: relative;
+    margin: 0; /* Ensure body has no margin */
+    
+    /* Flexbox properties to center content */
     display: flex;
     justify-content: center;
     align-items: center;
