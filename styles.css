@@ -59,30 +59,3 @@ body {
 .child-name {
     margin-top: 5px; /* Adjust this value to increase or decrease the top spacing */
 }
-/* Styling for the balloon on the left */
-#leftballoon {
-    position: absolute;
-    top: 20%; /* Adjust this as needed to position it vertically */
-    left: 5%;
-    width: 10%; /* Initial width */
-    animation: breathe 5s infinite alternate;
-    background: url('leftBalloon.png') no-repeat center center;
-    background-size: cover;
-}
-
-/* Styling for the balloon on the right */
-#rightballoon {
-    position: absolute;
-    top: 20%; /* Adjust this as needed to position it vertically */
-    right: 5%;
-    width: 10%; /* Initial width */
-    animation: breathe 5s infinite alternate;
-    background: url('rightBalloon.png') no-repeat center center;
-    background-size: cover;
-}
-
-/* Breathing effect keyframes */
-@keyframes breathe {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); } /* Adjust the scaling factor as needed */
-}
