@@ -1,7 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #FFD1DC;  /* Baby Pink */
+    background-image: url('path_to_confetti_image.jpg'); /* Add your confetti image path here */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden; /* to ensure balloons don't scroll the background */
     position: relative;
 }
@@ -24,4 +28,23 @@ thead {
 
 tbody tr:hover {
     background-color: #e5e5e5;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+.balloon {
+    background: rgba(0, 0, 0, 0); /* Transparent initially; color will be set via JavaScript */
+    width: 20px; /* Initial size; it will be randomized via JavaScript */
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10%;
+    animation: float 7s linear infinite; /* Default animation; duration will be randomized via JavaScript */
 }
