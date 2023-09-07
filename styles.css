@@ -1,11 +1,12 @@
 body {
     font-family: 'Comic Sans MS', sans-serif;
     background: lightblue radial-gradient(white, lightblue);
-    height: 100vh;
+    height: 3840px; /* screen height */
+    width: 2160px;  /* screen width */
     margin: 0;
     display: flex;
-    justify-content: flex-start; /* Aligns content to the top */
-    align-items: center;
+    justify-content: center; /* Centers content vertically */
+    align-items: center;     /* Centers content horizontally */
     overflow: hidden;
     position: relative;
 }
@@ -15,9 +16,9 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow-y: auto;   /* Allows for vertical scrolling inside container */
-    max-height: 90vh;   /* Restricts height to 90% of the viewport height */
-    padding-top: 30px;  /* Adds some space at the top */
+    overflow: hidden;   /* Ensures the overflowing content doesn't spill outside */
+    height: 3840px;     /* Set to screen height */
+    animation: autoscroll 60s linear infinite;  /* Adjust timing as needed */
 }
 
 .current-day {
@@ -36,43 +37,15 @@ body {
     margin-bottom: 10px;
 }
 
-.star {
-    position: absolute;
-    background-color: currentColor;
-    clip-path: polygon(
-      50% 0%,
-      61% 35%,
-      98% 35%,
-      68% 57%,
-      79% 91%,
-      50% 70%,
-      21% 91%,
-      32% 57%,
-      2% 35%,
-      39% 35%
-    );
-    animation: float 6s infinite alternate;
-    opacity: 0.6;
-}
-
-@keyframes float {
-    from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-20px);
-    }
-}
-
+/* Autoscroll animation. This will move the content down and then back up */
 @keyframes autoscroll {
     0% {
         transform: translateY(0);
     }
-    100% {
-        transform: translateY(-50%);
+    50% {
+        transform: translateY(-50%); /* Adjust this percentage based on your content's height */
     }
-}
-
-.auto-scroll {
-    animation: autoscroll 30s linear infinite;
+    100% {
+        transform: translateY(0);
+    }
 }
