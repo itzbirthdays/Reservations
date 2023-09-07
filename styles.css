@@ -1,59 +1,46 @@
 body {
-    font-family: 'Arial Rounded MT Bold', sans-serif; /* A professional yet playful font */
-    font-size: 35px;
+    background: radial-gradient(white, lightpink);
     height: 100vh;
-    background: radial-gradient(circle, white, #FFD1DC); /* White in the center fading to light pink */
     overflow: hidden;
-    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.info {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Spacing between elements */
 }
 
-.balloon, .star {
-    position: absolute;
-    width: 40px; /* Size increased */
-    height: 40px; /* Size increased */
-    border-radius: 50%;
-    bottom: -5%; 
-    animation: float 7s linear infinite;
-}
-
-.balloon {
-    background: rgba(0, 0, 0, 0); 
-}
-
-/* Balloon string */
-.balloon::after {
-    content: "";
-    display: block;
-    width: 2px;
-    height: 60px; 
-    background-color: black;
-    position: absolute;
-    bottom: -60px; 
-    left: 50%;
-    transform: translateX(-50%); 
-}
-
-.star {
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); 
-    background-color: rgba(0, 0, 0, 0); 
-    animation-duration: 5s;
+.child-name, .age, .room-number, .reservation-time {
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 @keyframes float {
     0% {
-        transform: translateY(0);
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
     }
     100% {
-        transform: translateY(-100vh);
+        transform: translateY(0px);
     }
+}
+
+.balloon {
+    position: absolute;
+    bottom: -10%;
+    animation: float 4s ease-in-out infinite;
+}
+
+.confetti {
+    position: absolute;
+    animation: float 5s ease-in-out infinite;
 }
