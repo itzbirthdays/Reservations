@@ -44,13 +44,13 @@ body {
 }
 .child-name {
     font-size: 36px;  /* Big letters */
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Comic Sans', sans-serif;
     text-align: center;
 }
 
 .age, .room, .time {
     font-size: 24px;  /* Subheader size */
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Comic Sans', sans-serif;
     text-align: center;
 }
 .time {
