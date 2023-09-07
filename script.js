@@ -43,3 +43,8 @@ function generateStars() {
         document.body.appendChild(star);
     }
 }
+// Automatic Scrolling logic
+const infoContainer = document.querySelector('.info');
+if (infoContainer.scrollHeight > infoContainer.clientHeight) {
+    infoContainer.classList.add('auto-scroll');
+}
