@@ -1,25 +1,22 @@
 body {
     font-family: 'Comic Sans MS', sans-serif;
     background: lightblue radial-gradient(white, lightblue);
-    height: 3840px; /* screen height */
-    width: 2160px;  /* screen width */
+    height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: flex-start; /* Aligns content to the top */
-    align-items: center;         /* Centers content horizontally */
+    justify-content: center; 
+    align-items: flex-start; 
     overflow: hidden;
     position: relative;
 }
 
 .container {
-    width: 100%;  /* Takes full width of the body */
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow: hidden;   /* Ensures the overflowing content doesn't spill outside */
-    height: 3840px;     /* Set to screen height */
-    animation: autoscroll 60s linear infinite;  /* Adjust timing as needed */
+    overflow: hidden;
 }
 
 .current-day {
@@ -38,15 +35,31 @@ body {
     margin-bottom: 10px;
 }
 
-/* Autoscroll animation. This will move the content down and then back up */
-@keyframes autoscroll {
-    0% {
-        transform: translateY(0);
+.star {
+    position: absolute;
+    background-color: currentColor;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    animation: float 6s infinite alternate;
+    opacity: 0.6;
+    z-index: -1;  /* This ensures the stars appear behind the text */
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0px);
     }
-    50% {
-        transform: translateY(-50%); /* Adjust this percentage based on your content's height */
-    }
-    100% {
-        transform: translateY(0);
+    to {
+        transform: translateY(-20px);
     }
 }
