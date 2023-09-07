@@ -22,12 +22,27 @@ body {
 
 @keyframes float {
     0% {
-        transform: translateY(0px);
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(10px, -10px);
+    }
+    50% {
+        transform: translate(-10px, 0);
+    }
+    75% {
+        transform: translate(10px, 10px);
     }
     100% {
-        transform: translateY(-20px);
+        transform: translate(0, 0);
     }
 }
+
+.star {
+    /* ... rest of the styles ... */
+    animation: float 20s infinite; /* Adjusted the time for a slower motion */
+}
+
 
 .container {
     z-index: 2;
