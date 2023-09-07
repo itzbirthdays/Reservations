@@ -5,13 +5,14 @@ body {
     width: 2160px;  /* screen width */
     margin: 0;
     display: flex;
-    justify-content: center; /* Centers content vertically */
-    align-items: center;     /* Centers content horizontally */
+    justify-content: flex-start; /* Aligns content to the top */
+    align-items: center;         /* Centers content horizontally */
     overflow: hidden;
     position: relative;
 }
 
 .container {
+    width: 100%;  /* Takes full width of the body */
     display: flex;
     flex-direction: column;
     align-items: center;
