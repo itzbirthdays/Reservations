@@ -15,11 +15,19 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow-y: auto;   /* Allows for vertical scrolling inside container */
-    max-height: 90vh;   /* Restricts height to 90% of the viewport height */
-    padding-top: 30px;  /* Adds some space at the top */
-    border: 2px solid #f0f0f0; /* Add a border around the container */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    max-height: 90vh;
+    border: 2px solid #f0f0f0; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    overflow-y: auto;
+    height: 80vh; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: autoscroll 60s linear infinite alternate; /* This is where the animation is applied */
 }
 
 .current-day {
