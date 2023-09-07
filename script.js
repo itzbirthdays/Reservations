@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    Tabletop.init({
-        key: '1WRKngZHrSUwTiXohWYOfT3VP-9hgetkRFb8pNc20JbI',  // This is your Google Sheet ID
-        callback: showInfo,
-        simpleSheet: true
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv'; // Replace with your CSV link
+
+    Papa.parse(csvUrl, {
+        download: true,
+        header: true,
+        complete: function(results) {
+            console.log(results.data);
+            displayData(results.data);
+        }
     });
 });
 
-function showInfo(data, tabletop) {
-    console.log(data);  // To verify the data
-
+function displayData(data) {
     const container = document.querySelector('.container .info');
     data.forEach(entry => {
         container.innerHTML += `
