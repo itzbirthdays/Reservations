@@ -1,50 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-size: 35px;
     height: 100vh;
-    background-color: #FFD1DC;  /* Baby Pink */
-    background-image: url('path_to_confetti_image.jpg'); /* Add your confetti image path here */
+    background-color: #FFD1DC;  
+    background-image: url('path_to_confetti_image.jpg');
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden; /* to ensure balloons don't scroll the background */
+    overflow: hidden; 
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-table {
-    width: 80%;
-    margin: 5% auto;
-    border-collapse: collapse;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-th, td {
-    border: 1px solid #aaa;
-    padding: 10px;
-    text-align: center;
+.column {
+    margin: 0 2%; /* spacing between columns */
 }
 
-thead {
-    background-color: #d0d0d0;
-}
-
-tbody tr:hover {
-    background-color: #e5e5e5;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
+.column > div {
+    margin-bottom: 20px; /* spacing between items within a column */
 }
 
 .balloon {
-    background: rgba(0, 0, 0, 0); /* Transparent initially; color will be set via JavaScript */
-    width: 20px; /* Initial size; it will be randomized via JavaScript */
+    background: rgba(0, 0, 0, 0);
+    width: 20px;
     height: 20px;
     border-radius: 50%;
     position: absolute;
     bottom: -10%;
-    animation: float 7s linear infinite; /* Default animation; duration will be randomized via JavaScript */
 }
