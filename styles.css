@@ -1,7 +1,7 @@
 body {
     background: radial-gradient(white, lightblue);
     height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Comic-Sans', sans-serif;
     font-size: 35px;
     display: flex;
     align-items: center;
@@ -32,4 +32,13 @@ body {
 .container {
     z-index: 2;
     position: relative;
+}
+.info div {
+    text-align: center; /* This will center-align the text within each div */
+}
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally centers .info in .container */
+    align-items: center; /* Vertically centers .info in .container */
+    height: 100vh; /* This ensures .container takes up the full viewport height */
 }
