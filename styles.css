@@ -53,3 +53,6 @@ body {
     font-family: 'Comic Sans MS', sans-serif;
     text-align: center;
 }
+.time {
+    margin-bottom: 20px; /* Adjust as needed for desired spacing */
+}
