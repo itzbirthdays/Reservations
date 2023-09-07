@@ -4,7 +4,7 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns content to the top */
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -15,8 +15,9 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Ensuring overflow doesn't spill outside container */
-    height: 80vh;     /* Setting a height to give space for auto-scrolling */
+    overflow-y: auto;   /* Allows for vertical scrolling inside container */
+    max-height: 90vh;   /* Restricts height to 90% of the viewport height */
+    padding-top: 30px;  /* Adds some space at the top */
 }
 
 .current-day {
@@ -62,6 +63,7 @@ body {
         transform: translateY(-20px);
     }
 }
+
 @keyframes autoscroll {
     0% {
         transform: translateY(0);
