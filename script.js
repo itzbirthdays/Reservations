@@ -35,6 +35,8 @@ function generateStars() {
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
+        star.style.animationDuration = `${15 + (Math.random() * 15)}s`;  // Randomizing animation duration between 15 to 30 seconds
         document.body.appendChild(star);
     }
+}
 }
