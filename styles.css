@@ -1,7 +1,7 @@
 body {
     background: radial-gradient(white, lightblue);
     height: 100vh;
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Comic Sans', sans-serif;
     font-size: 35px;
     display: flex;
     align-items: center;
