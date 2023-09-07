@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     Tabletop.init({
-        key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv',
+        key: 'https://docs.google.com/spreadsheets/d/1WRKngZHrSUwTiXohWYOfT3VP-9hgetkRFb8pNc20JbI/edit?usp=sharing',
         callback: showInfo,
         simpleSheet: true
     });
