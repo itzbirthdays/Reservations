@@ -18,7 +18,6 @@ function displayData(data) {
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
-            <div class="age">${entry.Age}</div>
             <div class="room">${entry.Room}</div>
             <div class="time">${entry.Time}</div>
         `;
