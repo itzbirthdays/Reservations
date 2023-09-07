@@ -1,41 +1,46 @@
 body {
-    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-family: 'Arial Rounded MT Bold', sans-serif; /* A professional yet playful font */
     font-size: 35px;
     height: 100vh;
-    background-color: #FFD1DC;  
-    background-image: url('path_to_confetti_image.jpg');
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden; 
-    position: relative;
-    margin: 0; /* Ensure body has no margin */
-    
-    /* Flexbox properties to center content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
+    background: radial-gradient(circle, white, #FFD1DC); /* White in the center fading to light pink */
+    overflow: hidden;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.column {
-    margin: 0 2%; /* spacing between columns */
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Spacing between elements */
 }
 
-.column > div {
-    margin-bottom: 20px; /* spacing between items within a column */
-}
-
-.balloon {
-    background: rgba(0, 0, 0, 0);
+.balloon, .star {
+    position: absolute;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    position: absolute;
-    bottom: -10%;
+    bottom: -5%; /* To start from below the screen */
+    animation: float 7s linear infinite;
+}
+
+.balloon {
+    background: rgba(0, 0, 0, 0); /* Will be colored using JavaScript */
+}
+
+.star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Shape for the star */
+    background-color: rgba(0, 0, 0, 0); /* Will be colored using JavaScript */
+    animation-duration: 5s; /* Different speed for stars */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
 }
