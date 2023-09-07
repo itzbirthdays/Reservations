@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     Tabletop.init({
-        key: '1WRKngZHrSUwTiXohWYOfT3VP-9hgetkRFb8pNc20JbI',
-        callback: showInfo,console.log(data);
+        key: '1WRKngZHrSUwTiXohWYOfT3VP-9hgetkRFb8pNc20JbI',  // This is your Google Sheet ID
+        callback: showInfo,
         simpleSheet: true
     });
 });
 
 function showInfo(data, tabletop) {
+    console.log(data);  // To verify the data
+
     const container = document.querySelector('.container .info');
     data.forEach(entry => {
         container.innerHTML += `
@@ -16,38 +18,4 @@ function showInfo(data, tabletop) {
             <div class="reservation-time">${entry.ReservationTime}</div>
         `;
     });
-}
-
-function createBalloon() {
-    let balloon = document.createElement('div');
-    balloon.className = 'balloon';
-    let colors = ['red', 'blue', 'green', 'pink', 'yellow'];
-    let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    let startPos = Math.random() * 100;
-
-    balloon.style.background = randomColor;
-    balloon.style.left = startPos + 'vw';
-    balloon.style.animationDuration = `${Math.random() * 3 + 5}s`;
-
-    document.body.appendChild(balloon);
-}
-
-function createStar() {
-    let star = document.createElement('div');
-    star.className = 'star';
-    let colors = ['red', 'blue', 'green', 'pink', 'yellow'];
-    let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    let startPos = Math.random() * 100;
-
-    star.style.backgroundColor = randomColor;
-    star.style.left = startPos + 'vw';
-    star.style.animationDuration = `${Math.random() * 3 + 5}s`;
-
-    document.body.appendChild(star);
-}
-
-// Create balloons and stars on page load
-for(let i = 0; i < 50; i++) {
-    createBalloon();
-    createStar();
 }
