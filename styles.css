@@ -12,7 +12,7 @@ body {
 }
 
 .current-day {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     margin: 30px 0;
 }
@@ -62,7 +62,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float calc(4s + var(--float-duration) * 2s) infinite alternate; /* Incorporate dynamic durations */
+    animation: float calc(2s + var(--float-duration) * 2s) infinite alternate; /* Incorporate dynamic durations */
     opacity: 0.6;
 }
 
