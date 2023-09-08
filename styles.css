@@ -1,73 +1,87 @@
-const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-
-document.querySelector('.current-day').innerText = today;
-
-document.addEventListener('DOMContentLoaded', function() {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLFJ-ARR393KF4Z6I2FYsYco265ddxfOd8YA37e5qCg6AJe4VpXUF7OwSulPmPX0SyA2apYW7OumWd/pub?output=csv';
-
-    Papa.parse(csvUrl, {
-        download: true,
-        header: true,
-        complete: function(results) {
-            displayData(results.data.filter(entry => entry.Day === today));
-            adjustScrolling();  // call after the data is displayed
-        }
-    });
-
-    generateStars();
-});
-
-function displayData(data) {
-    const container = document.querySelector('.content');  // Adjusted to target .content directly
-    data.forEach(entry => {
-        container.innerHTML += `
-            <div class="child-name">${entry.Name}</div>
-            <div class="room">${entry.Room}</div>
-            <div class="time">${entry.Time}</div>
-        `;
-    });
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: lightblue radial-gradient(white, lightblue);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-function generateStars() {
-    const colors = ["red", "blue", "green", "yellow", "purple"];
-    for (let i = 0; i < 50; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        star.style.width = `${(Math.random() * 15) + 5}px`;
-        star.style.height = star.style.width;
-        document.body.appendChild(star);
+.current-day {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;   /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    width: 80%;
+    border: 2px solid #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    margin-top: 10vh;  /* Push the container down by 10% of viewport height */
+    margin-bottom: 10vh;  /* Push the container up by 10% of viewport height */
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: autoscroll 60s linear infinite alternate;
+}
+
+.child-name {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.room, .time {
+    margin-bottom: 10px;
+}
+
+.star {
+    position: absolute;
+    background-color: currentColor;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    animation: float 3s infinite alternate;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
     }
 }
 
-function adjustScrolling() {
-    const content = document.querySelector('.content');   // Updated to target the .content
-    const contentHeight = content.scrollHeight;
-    const containerHeight = document.querySelector('.container').clientHeight; // Use container's height
-
-    if (contentHeight > containerHeight) {
-        const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
-        const animationStyle = `
-            @keyframes autoscroll {
-                0% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-${translateYValue}%);
-                }
-                100% {
-                    transform: translateY(0);
-                }
-            }
-        `;
-
-        const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = animationStyle;
-        document.head.appendChild(styleSheet);
-
-        content.style.animation = 'autoscroll 60s linear infinite'; // Apply animation to .content
+@keyframes autoscroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
     }
 }
