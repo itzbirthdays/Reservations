@@ -1,20 +1,32 @@
 body {
     font-family: 'Comic Sans MS', sans-serif;
-    background: lightblue radial-gradient(white, lightblue);
     height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
     position: relative;
+    animation: breathing-background 10s infinite alternate; /* Adjust the duration as needed */
+}
+
+@keyframes breathing-background {
+    0% {
+        background: lightblue;
+    }
+    50% {
+        background: #66b3ff; /* Adjust the hue to your liking */
+    }
+    100% {
+        background: lightblue;
+    }
 }
 
 .current-day {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
-    margin-top: 30px;   /* Adjust as needed */
-    margin-bottom: 10px;
+    margin: 30px 0; /* Added top and bottom margin */
 }
 
 .container {
@@ -26,9 +38,7 @@ body {
     width: 80%;
     border: 2px solid #f0f0f0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden; 
-    margin-top: 10vh;  /* Push the container down by 10% of viewport height */
-    margin-bottom: 10vh;  /* Push the container up by 10% of viewport height */
+    overflow: hidden;
 }
 
 .content {
@@ -64,7 +74,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 3s infinite alternate;
+    animation: float 6s infinite alternate;
     opacity: 0.6;
 }
 
