@@ -8,7 +8,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background: radial-gradient(circle 150px at center, white, transparent), radial-gradient(circle at center, white, transparent); 
+    background: radial-gradient(circle 10px at center, white, transparent), radial-gradient(circle at center, white, transparent); 
     animation: hueRotation 30s infinite;
 }
 
