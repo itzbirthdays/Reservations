@@ -34,11 +34,12 @@ function generateStars() {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${-10}%`;  // Start them 10% above the viewport
+        star.style.top = `${Math.random() * 100}vh`;
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
-        star.style.setProperty('--fall-duration', `${3 + Math.random() * 5}s`);
+        star.style.setProperty('--float-duration', `${2 + Math.random() * 4}s`);  
+        star.style.setProperty('--float-modifier', `${Math.random() * 20 - 10}px`);
         document.body.appendChild(star);
     }
 }
