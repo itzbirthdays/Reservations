@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: autoscroll 70s linear infinite; /* Updated the duration */
+    animation: autoscroll 70s linear infinite; 
 }
 
 .child-name {
@@ -62,17 +62,16 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: rainStars linear infinite;
-    animation-duration: var(--fall-duration, 10s);
+    animation: float var(--float-duration, 4s) infinite alternate;
     opacity: 0.6;
 }
 
-@keyframes rainStars {
-    0% {
-        transform: translateY(-10%);
+@keyframes float {
+    from {
+        transform: translateY(0);
     }
-    100% {
-        transform: translateY(110%);
+    to {
+        transform: translateY(var(--float-modifier, -10px));
     }
 }
 
