@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayData(data) {
-    const container = document.querySelector('.container .info');
+    const container = document.querySelector('.container .content');
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
