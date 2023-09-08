@@ -29,9 +29,8 @@ function displayData(data) {
 }
 
 function generateStars() {
-star.style.setProperty('--float-duration', Math.random().toString());
-star.style.setProperty('--float-modifier', (Math.random() * 2 - 1).toString());
     const colors = ["red", "blue", "green", "yellow", "purple"];
+    
     for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
         star.className = 'star';
@@ -40,6 +39,11 @@ star.style.setProperty('--float-modifier', (Math.random() * 2 - 1).toString());
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
+
+        // Apply the random float modifications after creating the star element
+        star.style.setProperty('--float-duration', Math.random().toString());
+        star.style.setProperty('--float-modifier', (Math.random() * 2 - 1).toString());
+
         document.body.appendChild(star);
     }
 }
