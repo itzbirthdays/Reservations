@@ -27,6 +27,7 @@ body {
     border: 2px solid #f0f0f0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* This ensures contents that are outside the container bounds aren't visible */
+    position: relative; /* This should keep the container stationary */
 }
 
 .content {
