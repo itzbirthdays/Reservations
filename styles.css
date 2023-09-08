@@ -63,7 +63,7 @@ body {
       39% 35%
     );
     animation: rainStars linear infinite;
-    animation-duration: var(--fall-duration, 5s);
+    animation-duration: var(--fall-duration, 10s);
     opacity: 0.6;
 }
 
