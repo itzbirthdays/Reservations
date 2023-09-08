@@ -64,7 +64,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 2s infinite alternate;
+    animation: float 9s infinite alternate;
     opacity: 0.6;
 }
 
@@ -73,7 +73,7 @@ body {
         transform: translateY(0px);
     }
     to {
-        transform: translateY(-40px);
+        transform: translateY(-60px);
     }
 }
 
