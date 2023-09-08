@@ -8,13 +8,13 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background: radial-gradient(circle at center, #FFC1E0, #FF88B2); /* Gradient from light pink to a deeper pink */
+    background: radial-gradient(circle at center, rgba(255, 193, 224, 0.35), rgba(173, 216, 230, 0.35)); /* Gradient from light pink to light blue with reduced opacity */
 }
 
 .current-day {
     font-size: 24px;
     font-weight: bold;
-    margin: 30px 0; /* Added top and bottom margin */
+    margin: 30px 0;
 }
 
 .container {
