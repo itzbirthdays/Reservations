@@ -30,7 +30,7 @@ function displayData(data) {
 
 function generateStars() {
     const colors = ["red", "blue", "green", "yellow", "purple"];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}vw`;
