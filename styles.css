@@ -8,7 +8,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background: radial-gradient(circle at center, rgba(255, 193, 224, 0.75), rgba(173, 216, 230, 0.75)); 
+    background: radial-gradient(circle at center, rgba(255, 193, 224, 0.95), rgba(173, 216, 230, 0.75)); 
 }
 
 .current-day {
