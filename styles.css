@@ -8,18 +8,16 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    animation: breathing-background 10s infinite alternate; /* Adjust the duration as needed */
+    background: radial-gradient(circle at center, white, transparent);
+    animation: hueRotation 30s infinite;
 }
 
-@keyframes breathing-background {
+@keyframes hueRotation {
     0% {
-        background: lightblue;
-    }
-    50% {
-        background: #66b3ff; /* Adjust the hue to your liking */
+        filter: hue-rotate(0deg);
     }
     100% {
-        background: lightblue;
+        filter: hue-rotate(360deg);
     }
 }
 
