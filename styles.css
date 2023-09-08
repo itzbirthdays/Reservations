@@ -9,32 +9,26 @@ body {
     overflow: hidden;
     position: relative;
     background: transparent; /* Set this to transparent */
+    animation: hueTransition 60s infinite;
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; /* Place it behind content */
-    background: linear-gradient(to bottom, #FFC1E0, #FFD6AA, #D4F4DD, #A9E4FC, #CBA2E8);
-    filter: hue-rotate(0deg);
-    animation: hueRotation 30s infinite;
-}
-
-@keyframes hueRotation {
-    0% {
-        filter: hue-rotate(0deg);
+@keyframes hueTransition {
+    0%, 100% {
+        background-color: #FFC1E0; /* pastel pink */
     }
-    100% {
-        filter: hue-rotate(360deg);
+    20% {
+        background-color: #FFD6AA; /* pastel orange */
+    }
+    40% {
+        background-color: #D4F4DD; /* pastel green */
+    }
+    60% {
+        background-color: #A9E4FC; /* pastel blue */
+    }
+    80% {
+        background-color: #CBA2E8; /* pastel purple */
     }
 }
-
-/* ... (rest of your CSS remains unchanged) ... */
-
 
 .current-day {
     font-size: 24px;
