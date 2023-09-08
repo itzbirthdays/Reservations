@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayData(data) {
-    const container = document.querySelector('.container .content');
+    const container = document.querySelector('.content');  // Adjusted to target .content directly
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
@@ -43,12 +43,12 @@ function generateStars() {
 }
 
 function adjustScrolling() {
-    const container = document.querySelector('.container');
-    const contentHeight = container.scrollHeight;
-    const viewportHeight = window.innerHeight;
+    const content = document.querySelector('.content');   // Updated to target the .content
+    const contentHeight = content.scrollHeight;
+    const containerHeight = document.querySelector('.container').clientHeight; // Use container's height
 
-    if (contentHeight > viewportHeight) {
-        const translateYValue = ((contentHeight - viewportHeight) / contentHeight) * 100;
+    if (contentHeight > containerHeight) {
+        const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
         const animationStyle = `
             @keyframes autoscroll {
                 0% {
@@ -68,6 +68,6 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        container.style.animation = 'autoscroll 60s linear infinite';
+        content.style.animation = 'autoscroll 60s linear infinite'; // Apply animation to .content
     }
 }
