@@ -62,7 +62,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float var(--float-duration, 4s) infinite alternate;
+    animation: float var(--float-duration, 2s) infinite alternate;
     opacity: 0.6;
 }
 
@@ -71,7 +71,7 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(var(--float-modifier, -10px));
+        transform: translateY(var(--float-modifier, -20px));
     }
 }
 
