@@ -67,6 +67,6 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        content.style.animation = 'autoscroll 70s linear infinite';
+        content.style.animation = 'autoscroll 40s linear infinite';
     }
 }
