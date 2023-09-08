@@ -29,6 +29,8 @@ function displayData(data) {
 }
 
 function generateStars() {
+star.style.setProperty('--float-duration', Math.random().toString());
+star.style.setProperty('--float-modifier', (Math.random() * 2 - 1).toString());
     const colors = ["red", "blue", "green", "yellow", "purple"];
     for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
