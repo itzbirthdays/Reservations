@@ -4,7 +4,8 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -14,32 +15,27 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    z-index: 10; /* To ensure the day of the week remains above the border */
-    position: relative;
 }
 
 .container {
-    border: 5px solid black;
-    padding: 20px;
-    height: 70vh;
-    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    position: relative;
-    z-index: 2; /* Ensures container is above the stars */
+    text-align: center;
+    max-height: 90vh;
+    width: 80%; 
+    border: 2px solid #f0f0f0; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide any content that goes outside of the container */
 }
 
 .content {
-    animation: autoscroll 30s linear infinite;
-    height: 100%;
+    height: 80vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    position: relative;
-    z-index: 1; /* Ensures content is below the container */
+    animation: autoscroll 60s linear infinite alternate;
 }
 
 .child-name {
@@ -67,16 +63,16 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 4s infinite alternate; /* Adjusted for faster floating */
+    animation: float 6s infinite alternate;
     opacity: 0.6;
 }
 
 @keyframes float {
     from {
-        transform: translateY(0px) translateX(0px);
+        transform: translateY(0px);
     }
     to {
-        transform: translateY(-20px) translateX(20px); /* Horizontal movement added */
+        transform: translateY(-20px);
     }
 }
 
@@ -85,6 +81,6 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-100% + 100vh);
+        transform: translateY(-50%); 
     }
 }
