@@ -64,7 +64,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 9s infinite alternate;
+    animation: float 6s infinite alternate;
     opacity: 0.6;
 }
 
