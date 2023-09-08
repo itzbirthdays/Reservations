@@ -71,12 +71,12 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(var(--float-modifier, -20px));
+        transform: translateY(var(--float-modifier, -10px));
     }
 }
 
 @keyframes autoscroll {
-    0%, 20%, 80%, 100% {
+    0%, 30%, 70%, 100% {
         transform: translateY(0);
     }
     50% {
