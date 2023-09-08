@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayData(data) {
-    const container = document.querySelector('.content');
+    const container = document.querySelector('.content');  // Adjusted to target .content directly
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
@@ -38,26 +38,27 @@ function generateStars() {
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
-        star.style.setProperty('--float-duration', `${2 + Math.random() * 4}s`);  
-        star.style.setProperty('--float-modifier', `${Math.random() * 20 - 10}px`);
         document.body.appendChild(star);
     }
 }
 
 function adjustScrolling() {
-    const content = document.querySelector('.content');
+    const content = document.querySelector('.content');   // Updated to target the .content
     const contentHeight = content.scrollHeight;
-    const containerHeight = document.querySelector('.container').clientHeight;
+    const containerHeight = document.querySelector('.container').clientHeight; // Use container's height
 
     if (contentHeight > containerHeight) {
         const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
         const animationStyle = `
             @keyframes autoscroll {
-                0%, 30%, 70%, 100% {
+                0% {
                     transform: translateY(0);
                 }
                 50% {
                     transform: translateY(-${translateYValue}%);
+                }
+                100% {
+                    transform: translateY(0);
                 }
             }
         `;
@@ -67,6 +68,6 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        content.style.animation = 'autoscroll 40s linear infinite';
+        content.style.animation = 'autoscroll 60s linear infinite'; // Apply animation to .content
     }
 }
