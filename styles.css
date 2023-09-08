@@ -8,8 +8,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background: transparent; /* Set this to transparent */
-    animation: hueTransition 60s infinite;
+    background: #FFC1E0; /* Light pink background color */
 }
 
 body::before {
@@ -22,24 +21,6 @@ body::before {
     height: 300px;
     background: radial-gradient(circle, white, transparent);
     z-index: -1;
-}
-
-@keyframes hueTransition {
-    0%, 100% {
-        background-color: #FFC1E0; /* pastel pink */
-    }
-    20% {
-        background-color: #FFD6AA; /* pastel blue */
-    }
-    40% {
-        background-color: #D4F4DD; /* pastel green */
-    }
-    60% {
-        background-color: #A9E4FC; /* pastel red */
-    }
-    80% {
-        background-color: #CBA2E8; /* pastel purple */
-    }
 }
 
 .current-day {
