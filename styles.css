@@ -19,7 +19,7 @@ body::before {
     right: 0;
     bottom: 0;
     z-index: -1; /* Place it behind content */
-    background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+    background: linear-gradient(to bottom, #FFC1E0, #FFD6AA, #D4F4DD, #A9E4FC, #CBA2E8);
     filter: hue-rotate(0deg);
     animation: hueRotation 30s infinite;
 }
@@ -32,6 +32,9 @@ body::before {
         filter: hue-rotate(360deg);
     }
 }
+
+/* ... (rest of your CSS remains unchanged) ... */
+
 
 .current-day {
     font-size: 24px;
