@@ -4,7 +4,7 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -15,6 +15,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    z-index: 3; /* Highest z-index */
+    position: relative; 
 }
 
 .container {
@@ -26,7 +28,9 @@ body {
     width: 80%; 
     border: 2px solid #f0f0f0; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Hide any content that goes outside of the container */
+    overflow: hidden; 
+    position: relative;
+    z-index: 1; /* Lower z-index */
 }
 
 .content {
@@ -36,6 +40,8 @@ body {
     flex-direction: column;
     align-items: center;
     animation: autoscroll 60s linear infinite alternate;
+    position: relative;
+    z-index: 2; /* Intermediate z-index */
 }
 
 .child-name {
