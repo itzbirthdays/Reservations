@@ -8,17 +8,20 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background: radial-gradient(circle 200px at center, white 0%, transparent 100%), #0077b6; /* Gradient made larger and more transparent */
-    animation: hueRotation 30s infinite;
+    background: transparent; /* Set this to transparent */
 }
 
-@keyframes hueRotation {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place it behind content */
+    background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+    filter: hue-rotate(0deg);
+    animation: hueRotation 30s infinite;
 }
 
 @keyframes hueRotation {
