@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: autoscroll 70s linear infinite alternate; /* Increased the duration for a smoother effect */
+    animation: autoscroll 70s linear infinite; /* Updated the duration */
 }
 
 .child-name {
@@ -62,16 +62,16 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float calc(3s + 2s * var(--float-duration)) infinite alternate; /* Added randomness to floating */
+    animation: float calc(4s + var(--float-duration) * 2s) infinite alternate; /* Incorporate dynamic durations */
     opacity: 0.6;
 }
 
 @keyframes float {
     from {
-        transform: translateY(0px);
+        transform: translateY(calc(0px + var(--float-modifier) * 10px)); 
     }
     to {
-        transform: translateY(calc(-20px - 10px * var(--float-modifier)));
+        transform: translateY(calc(-20px + var(--float-modifier) * 10px));
     }
 }
 
