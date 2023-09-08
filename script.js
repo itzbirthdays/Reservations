@@ -30,20 +30,15 @@ function displayData(data) {
 
 function generateStars() {
     const colors = ["red", "blue", "green", "yellow", "purple"];
-    
     for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
+        star.style.top = `${-10 + (Math.random() * -10)}vh`; // Start them off-screen
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
-
-        // Apply the random float modifications after creating the star element
-        star.style.setProperty('--float-duration', Math.random().toString());
-        star.style.setProperty('--float-modifier', (Math.random() * 2 - 1).toString());
-
+        star.style.setProperty('--fall-duration', `${3 + Math.random() * 5}s`); // random duration between 3 to 8 seconds
         document.body.appendChild(star);
     }
 }
