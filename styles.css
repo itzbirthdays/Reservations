@@ -14,7 +14,7 @@ body {
     font-size: 36px;
     font-weight: bold;
     margin-top: 35px;   /* Adjust as needed */
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .container {
@@ -46,7 +46,7 @@ body {
 }
 
 .room, .time {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .star {
