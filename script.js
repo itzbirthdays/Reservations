@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayData(data) {
-    const container = document.querySelector('.content');  // Adjusted to target .content directly
+    const container = document.querySelector('.content');
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
@@ -34,32 +34,29 @@ function generateStars() {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${-10 + (Math.random() * -10)}vh`; // Start them off-screen
+        star.style.top = `${-10}%`;  // Start them 10% above the viewport
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
-        star.style.setProperty('--fall-duration', `${3 + Math.random() * 5}s`); // random duration between 3 to 8 seconds
+        star.style.setProperty('--fall-duration', `${3 + Math.random() * 5}s`);
         document.body.appendChild(star);
     }
 }
 
 function adjustScrolling() {
-    const content = document.querySelector('.content');   // Updated to target the .content
+    const content = document.querySelector('.content');
     const contentHeight = content.scrollHeight;
-    const containerHeight = document.querySelector('.container').clientHeight; // Use container's height
+    const containerHeight = document.querySelector('.container').clientHeight;
 
     if (contentHeight > containerHeight) {
         const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
         const animationStyle = `
             @keyframes autoscroll {
-                0% {
+                0%, 20%, 80%, 100% {
                     transform: translateY(0);
                 }
                 50% {
                     transform: translateY(-${translateYValue}%);
-                }
-                100% {
-                    transform: translateY(0);
                 }
             }
         `;
@@ -69,6 +66,6 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        content.style.animation = 'autoscroll 60s linear infinite'; // Apply animation to .content
+        content.style.animation = 'autoscroll 70s linear infinite';
     }
 }
