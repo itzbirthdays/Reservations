@@ -53,7 +53,7 @@ function adjustScrolling() {
         const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
         const animationStyle = `
             @keyframes autoscroll {
-                0%, 20%, 80%, 100% {
+                0%, 30%, 70%, 100% {
                     transform: translateY(0);
                 }
                 50% {
