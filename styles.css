@@ -46,7 +46,7 @@ body {
 }
 
 .room, .time {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .star {
@@ -64,7 +64,7 @@ body {
       2% 35%,
       39% 35%
     );
-    animation: float 10s infinite alternate;
+    animation: float 2s infinite alternate;
     opacity: 0.6;
 }
 
@@ -73,7 +73,7 @@ body {
         transform: translateY(0px);
     }
     to {
-        transform: translateY(-20px);
+        transform: translateY(10px);
     }
 }
 
