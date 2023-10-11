@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayData(data) {
-    const container = document.querySelector('.content');  // Adjusted to target .content directly
+    const container = document.querySelector('.content');
     data.forEach(entry => {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
             <div class="room">${entry.Room}</div>
+            <div class="marketing">${entry.Marketing}</div>  <!-- New Line -->
             <div class="time">${entry.Time}</div>
         `;
     });
