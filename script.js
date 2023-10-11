@@ -37,7 +37,7 @@ function displayData(data) {
 
 function adjustScrolling(dataLength) {
     const content = document.querySelector('.content');
-    if (dataLength >= 5) {
+    if (dataLength > 5) { 
         const contentHeight = content.scrollHeight;
         const containerHeight = document.querySelector('.container').clientHeight;
         const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
@@ -60,7 +60,7 @@ function adjustScrolling(dataLength) {
 
         content.style.animation = 'autoscroll 80s linear infinite';
     } else {
-        content.style.animation = '';  // remove the animation if less than 5 entries
+        content.style.animation = 'none';  
     }
 }
 
