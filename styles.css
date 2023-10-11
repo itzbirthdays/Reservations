@@ -13,7 +13,7 @@ body {
 .current-day {
     font-size: 36px;
     font-weight: bold;
-    margin-top: 35px;   /* Adjust as needed */
+    margin-top: 35px;
     margin-bottom: 5px;
 }
 
@@ -27,8 +27,8 @@ body {
     border: 2px solid #f0f0f0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden; 
-    margin-top: 5vh;  /* Push the container down by 10% of viewport height */
-    margin-bottom: 15vh;  /* Push the container up by 10% of viewport height */
+    margin-top: 5vh;
+    margin-bottom: 15vh;
 }
 
 .content {
@@ -45,7 +45,7 @@ body {
     margin-bottom: 2px;
 }
 
-.room, .time {
+.room, .time, .marketing {
     margin-bottom: 15px;
 }
 
@@ -76,15 +76,6 @@ body {
     }
     100% {
         transform: rotate(var(--spin-amount, 360deg));
-    }
-}
-
-@keyframes float {
-    from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-70px);
     }
 }
 
