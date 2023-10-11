@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         header: true,
         complete: function(results) {
             displayData(results.data.filter(entry => entry.Day === today));
-            adjustScrolling();  // call after the data is displayed
         }
     });
 
@@ -23,10 +22,12 @@ function displayData(data) {
         container.innerHTML += `
             <div class="child-name">${entry.Name}</div>
             <div class="room">${entry.Room}</div>
-            <div class="marketing">${entry.Marketing}</div>  <!-- New Line -->
+            <div class="marketing">${entry.Marketing}</div>
             <div class="time">${entry.Time}</div>
         `;
     });
+}
+
 function generateStars() {
     const colors = ["red", "blue", "green", "yellow", "purple"];
     for (let i = 0; i < 50; i++) {
@@ -37,40 +38,8 @@ function generateStars() {
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
-        
-        star.style.setProperty('--spin-duration', `${2 + Math.random() * 5}s`);
-        star.style.setProperty('--spin-amount', `${Math.random() > 0.5 ? 360 : -360}deg`);
-        
+        star.style.setProperty('--spin-duration', `${2 + Math.random() * 5}s`); // random duration
+        star.style.setProperty('--spin-amount', `${(Math.random() < 0.5 ? 360 : -360)}deg`); // random direction of spin
         document.body.appendChild(star);
-    }
-}
-
-function adjustScrolling() {
-    const content = document.querySelector('.content');   // Updated to target the .content
-    const contentHeight = content.scrollHeight;
-    const containerHeight = document.querySelector('.container').clientHeight; // Use container's height
-
-    if (contentHeight > containerHeight) {
-        const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
-        const animationStyle = `
-            @keyframes autoscroll {
-                0% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-${translateYValue}%);
-                }
-                100% {
-                    transform: translateY(0);
-                }
-            }
-        `;
-
-        const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = animationStyle;
-        document.head.appendChild(styleSheet);
-
-        content.style.animation = 'autoscroll 60s linear infinite'; // Apply animation to .content
     }
 }
