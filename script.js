@@ -27,11 +27,9 @@ function displayData(data) {
             <div class="time">${entry.Time}</div>
         `;
     });
-}
-
 function generateStars() {
     const colors = ["red", "blue", "green", "yellow", "purple"];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
         star.className = 'star';
         star.style.left = `${Math.random() * 100}vw`;
@@ -39,6 +37,10 @@ function generateStars() {
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         star.style.width = `${(Math.random() * 15) + 5}px`;
         star.style.height = star.style.width;
+        
+        star.style.setProperty('--spin-duration', `${2 + Math.random() * 5}s`);
+        star.style.setProperty('--spin-amount', `${Math.random() > 0.5 ? 360 : -360}deg`);
+        
         document.body.appendChild(star);
     }
 }
