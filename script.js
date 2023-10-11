@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updateTime() {
     const now = new Date();
-    const timeString = now.toLocaleTimeString(); // This will format as e.g. "12:35:47 PM"
+    const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }); // Formats as e.g. "12:35 PM"
     document.getElementById('current-time').textContent = timeString;
 }
+
