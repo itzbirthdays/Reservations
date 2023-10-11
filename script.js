@@ -43,3 +43,16 @@ function generateStars() {
         document.body.appendChild(star);
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // ... your existing code ...
+
+    // Initialize time display
+    updateTime();
+    setInterval(updateTime, 1000); // Update every second
+});
+
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString(); // This will format as e.g. "12:35:47 PM"
+    document.getElementById('current-time').textContent = timeString;
+}
