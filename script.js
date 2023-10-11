@@ -55,7 +55,6 @@ function generateStars() {
         document.body.appendChild(star);
     }
 }
-
 function adjustScrolling() {
     const content = document.querySelector('.content');
     const contentHeight = content.scrollHeight;
@@ -65,7 +64,7 @@ function adjustScrolling() {
         const translateYValue = ((contentHeight - containerHeight) / contentHeight) * 100;
         const animationStyle = `
             @keyframes autoscroll {
-                0%, 20%, 80%, 100% {
+                0%, 25%, 75%, 100% {
                     transform: translateY(0);
                 }
                 50% {
@@ -79,9 +78,8 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        content.style.animation = 'autoscroll 120s linear infinite';  // Adjust duration as needed
+        content.style.animation = 'autoscroll 120s linear infinite';
     } else {
         content.style.animation = '';  // Remove any existing autoscroll animation
     }
 }
-
