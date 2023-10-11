@@ -79,7 +79,7 @@ function adjustScrolling() {
         styleSheet.innerText = animationStyle;
         document.head.appendChild(styleSheet);
 
-        content.style.animation = 'autoscroll 80s linear infinite';
+        content.style.animation = 'autoscroll 120s linear infinite';
     } else {
         content.style.animation = '';
     }
